@@ -1,9 +1,9 @@
 function result = Lagrange(xa, ya, x)
-n = length(xa);
+k = length(xa);
 result = 0;
-for i = 1:n
+for i = 1:k
     L = 1;
-    for j = 1:n
+    for j = 1:k
         if i ~= j
             L = L * (x - xa(j)) / (xa(i) - xa(j));
         end
