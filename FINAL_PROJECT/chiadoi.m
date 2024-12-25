@@ -1,6 +1,6 @@
-function [m,n] = chiadoi(f, a, b, e)
+function [m,solanlap] = chiadoi(f, a, b, e)
 fxi = str2func(['@(x)',f]);
-n = 0;
+solanlap = 0;
     while(1)
         %middle value
         m = (a+b)/2;
@@ -9,7 +9,7 @@ n = 0;
         else
             a = m;
         end
-        n = n + 1;
+        solanlap = solanlap + 1;
         if (b - a)<e
             break;
         end
