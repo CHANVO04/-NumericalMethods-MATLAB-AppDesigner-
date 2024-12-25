@@ -1,4 +1,4 @@
-function [x0,n,check] = tieptuyen(fx,a,b,e)
+function [x0,n,check] = tieptuyen(fx,a,b,ss)
 x0 = 0;
 n = 0;
 check = 0;
@@ -37,7 +37,7 @@ if (fdx_a * fdx_b > 0)
             n = n + 1; % T?ng s? l?n l?p
                             
         % Ki?m tra ?i?u ki?n h?i t?
-            if abs(fx_func(x1)) < e
+            if abs(fx_func(x1)) < ss
                 break;
             end
             % C?p nh?t giá tr? x0
