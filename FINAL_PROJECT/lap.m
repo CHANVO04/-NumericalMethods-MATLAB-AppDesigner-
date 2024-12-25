@@ -1,4 +1,4 @@
-function [x0,n,check] = lap(fx, fp, a, b, saiso)
+function [x0,n,check] = lap(fx, fp, a, b, ss)
 x0 = 0;
 n = 0; % S? l?n l?p
 check = 0;
@@ -33,7 +33,7 @@ if all(dfp_values < 1)
     while true
         x1 = fpi(x0); % G?i hàm l?p
         n = n + 1;
-        if abs(x1 - x0) < saiso
+        if abs(x1 - x0) < ss
             break;
         end
         x0 = x1;
