@@ -1,6 +1,6 @@
-function [x0,n,check] = lap(fx, fp, a, b, e)
+function [x0,solanlap,check] = lap(fx, fp, a, b, e)
 x0 = 0;
-n = 0; % S? l?n l?p
+solanlap = 0; % S? l?n l?p
 check = 0;
 fxi = str2func(['@(x)',fx]);
 
@@ -32,7 +32,7 @@ if all(dfp_values < 1)
             
     while true
         x1 = fpi(x0); % G?i hàm l?p
-        n = n + 1;
+        solanlap = solanlap + 1;
         if abs(x1 - x0) < e
             break;
         end

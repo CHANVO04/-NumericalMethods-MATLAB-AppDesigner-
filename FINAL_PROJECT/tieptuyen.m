@@ -1,6 +1,6 @@
-function [x0,n,check] = tieptuyen(fx,a,b,e)
+function [x0,solanlap,check] = tieptuyen(fx,a,b,e)
 x0 = 0;
-n = 0;
+solanlap = 0;
 check = 0;
 max_iter = 100; % Gi?i h?n s? vòng l?p
 
@@ -34,7 +34,7 @@ if (fdx_a * fdx_b > 0)
         while n < max_iter        
         % Tính ti?p tuy?n Newton
             x1 = x0 - fx_func(x0) / fdx_func(x0); % C?p nh?t ?úng
-            n = n + 1; % T?ng s? l?n l?p
+            solanlap = solanlap + 1; % T?ng s? l?n l?p
                             
         % Ki?m tra ?i?u ki?n h?i t?
             if abs(fx_func(x1)) < e
