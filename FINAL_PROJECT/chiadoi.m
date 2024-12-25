@@ -1,5 +1,5 @@
-function [m,n] = chiadoi(fx, a, b, saiso)
-fxi = str2func(['@(x)',fx]);
+function [m,n] = chiadoi(f, a, b, e)
+fxi = str2func(['@(x)',f]);
 n = 0;
     while(1)
         %middle value
@@ -10,7 +10,7 @@ n = 0;
             a = m;
         end
         n = n + 1;
-        if (b - a)<saiso
+        if (b - a)<e
             break;
         end
     end
