@@ -1,4 +1,4 @@
-function [m,n] = chiadoi(fx, a, b, saiso)
+function [m,n] = chiadoi(fx, a, b, e)
 fxi = str2func(['@(x)',fx]);
 n = 0;
     while(1)
@@ -10,7 +10,7 @@ n = 0;
             a = m;
         end
         n = n + 1;
-        if (b - a)<saiso
+        if (b - a)<e
             break;
         end
     end
